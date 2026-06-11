@@ -24,15 +24,20 @@ function Pelicula({ titulo }) {
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  // Array de peliculas (strings)
+    const peliculas = [
+        'The Sheep Detectives',
+        'Obsesión',
+        'Hoppers',
+        'The Housemaid'
+    ];
 
   return (
     <div>
       <h1>Mis Películas Favoritas</h1>
-      <Pelicula titulo="The Sheep Detectives" />
-      <Pelicula titulo="Obsesión" />
-      <Pelicula titulo="Hoppers" />
-      <Pelicula titulo="The Housemaid" />
+              {peliculas.map((pelicula, indice) => (
+                <Pelicula key={indice} titulo={pelicula} />
+            ))}
     </div>
   )
 }
